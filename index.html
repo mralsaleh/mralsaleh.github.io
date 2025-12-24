@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mohammed Alsaleh - Senior Data & AI Engineer</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f4f4f4;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 3em;
+            margin-bottom: 10px;
+        }
+
+        header p {
+            font-size: 1.3em;
+            margin-bottom: 30px;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .social-links a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            border: 2px solid white;
+            border-radius: 5px;
+            transition: all 0.3s;
+        }
+
+        .social-links a:hover {
+            background: white;
+            color: #667eea;
+        }
+
+        /* About Section */
+        .about {
+            background: white;
+            padding: 60px 0;
+        }
+
+        .about h2 {
+            text-align: center;
+            font-size: 2.5em;
+            margin-bottom: 30px;
+            color: #667eea;
+        }
+
+        .about-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+            font-size: 1.1em;
+        }
+
+        /* Skills Section */
+        .skills {
+            padding: 60px 0;
+            background: #f9f9f9;
+        }
+
+        .skills h2 {
+            text-align: center;
+            font-size: 2.5em;
+            margin-bottom: 50px;
+            color: #667eea;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .skill-category {
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .skill-category h3 {
+            color: #667eea;
+            margin-bottom: 15px;
+            font-size: 1.3em;
+        }
+
+        .skill-category ul {
+            list-style: none;
+        }
+
+        .skill-category li {
+            padding: 5px 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .skill-category li:last-child {
+            border-bottom: none;
+        }
+
+        /* Projects Section */
+        .projects {
+            padding: 60px 0;
+            background: white;
+        }
+
+        .projects h2 {
+            text-align: center;
+            font-size: 2.5em;
+            margin-bottom: 50px;
+            color: #667eea;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+        }
+
+        .project-card {
+            background: #f9f9f9;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+        }
+
+        .project-card h3 {
+            color: #667eea;
+            margin-bottom: 15px;
+            font-size: 1.4em;
+        }
+
+        .project-card p {
+            color: #666;
+            margin-bottom: 15px;
+        }
+
+        .project-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 15px;
+        }
+
+        .tag {
+            background: #667eea;
+            color: white;
+            padding: 5px 12px;
+            border-radius: 15px;
+            font-size: 0.85em;
+        }
+
+        /* Experience Section */
+        .experience {
+            padding: 60px 0;
+            background: #f9f9f9;
+        }
+
+        .experience h2 {
+            text-align: center;
+            font-size: 2.5em;
+            margin-bottom: 50px;
+            color: #667eea;
+        }
+
+        .timeline {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .timeline-item {
+            background: white;
+            padding: 30px;
+            margin-bottom: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            border-left: 5px solid #667eea;
+        }
+
+        .timeline-item h3 {
+            color: #667eea;
+            font-size: 1.5em;
+            margin-bottom: 10px;
+        }
+
+        .timeline-item .company {
+            color: #764ba2;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .timeline-item .date {
+            color: #999;
+            font-size: 0.9em;
+            margin-bottom: 15px;
+        }
+
+        .timeline-item ul {
+            margin-left: 20px;
+        }
+
+        .timeline-item li {
+            margin-bottom: 8px;
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 60px 0;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            text-align: center;
+        }
+
+        .contact h2 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+
+        .contact p {
+            font-size: 1.2em;
+            margin-bottom: 30px;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            flex-wrap: wrap;
+            margin-top: 30px;
+        }
+
+        .contact-item {
+            font-size: 1.1em;
+        }
+
+        .contact-item a {
+            color: white;
+            text-decoration: none;
+            border-bottom: 2px solid transparent;
+            transition: border-bottom 0.3s;
+        }
+
+        .contact-item a:hover {
+            border-bottom: 2px solid white;
+        }
+
+        /* Footer */
+        footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2em;
+            }
+
+            header p {
+                font-size: 1.1em;
+            }
+
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-info {
+                flex-direction: column;
+                gap: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <h1>Mohammed Alsaleh</h1>
+            <p>Data & AI Engineer | Building Intelligent Data Solutions</p>
+            <div class="social-links">
+                <a href="https://github.com/mralsaleh" target="_blank">GitHub</a>
+                <a href="https://www.linkedin.com/in/mohammed-alsaleh-306b97198/" target="_blank">LinkedIn</a>
+                <a href="mailto:mohammedalsaleh033@gmail.com">Email</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- About Section -->
+    <section class="about">
+        <div class="container">
+            <h2>About Me</h2>
+            <div class="about-content">
+                <p>I am a passionate Data & AI Engineer with 5+ years of experience in building scalable data pipelines, deploying AI/LLM solutions, and driving business insights through data. I specialize in cloud data engineering (AWS, GCP), machine learning operations, and developing intelligent automation systems.</p>
+                <p style="margin-top: 20px;">I continuously seek innovation and keep abreast of the latest technological advancements to deliver cutting-edge solutions that drive business value.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section class="skills">
+        <div class="container">
+            <h2>Technical Expertise</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3>Programming Languages</h3>
+                    <ul>
+                        <li>Python (Advanced)</li>
+                        <li>SQL (Expert)</li>
+                        <li>C++ (Advanced)</li>
+                        <li>JavaScript (Intermediate)</li>
+                        <li>Go (Beginner)</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3>AI & Machine Learning</h3>
+                    <ul>
+                        <li>Large Language Models (Advanced)</li>
+                        <li>LangGraph (Beginner)</li>
+                        <li>Hugging Face (Intermediate)</li>
+                        <li>RAG Systems (Beginner)</li>
+                        <li>AI Agents (Beginner)</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3>Cloud & Infrastructure</h3>
+                    <ul>
+                        <li>AWS (EC2, S3, Kinesis, Athena)</li>
+                        <li>Google Cloud (BigQuery)</li>
+                        <li>Docker (Intermediate)</li>
+                        <li>Linux Ubuntu (Intermediate)</li>
+                        <li>MLOps/LLMOps (Beginner)</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3>Data Engineering</h3>
+                    <ul>
+                        <li>ETL Pipelines (Expert)</li>
+                        <li>Data Warehousing (Advanced)</li>
+                        <li>SQL/NoSQL Databases (Expert)</li>
+                        <li>MS-SSIS (Advanced)</li>
+                        <li>Apache Spark</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3>Data Visualization</h3>
+                    <ul>
+                        <li>Looker (Advanced)</li>
+                        <li>Power BI (Intermediate)</li>
+                        <li>Redash (Beginner)</li>
+                        <li>MS-SSRS (Advanced)</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3>Development Tools</h3>
+                    <ul>
+                        <li>Git (Intermediate)</li>
+                        <li>Oracle Developer (Advanced)</li>
+                        <li>PostgreSQL (Beginner)</li>
+                        <li>Bash Scripting (Beginner)</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section class="projects">
+        <div class="container">
+            <h2>Featured Projects</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <h3>Data Warehouse Migration</h3>
+                    <p>Led the complete migration of data warehouse from AWS to Google BigQuery, optimizing data processing and analytics capabilities for terabyte-scale operations.</p>
+                    <div class="project-tags">
+                        <span class="tag">AWS</span>
+                        <span class="tag">BigQuery</span>
+                        <span class="tag">ETL</span>
+                        <span class="tag">Migration</span>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <h3>Abwaab Papers OCR System</h3>
+                    <p>Designed and deployed an OCR solution with REST API endpoint to extract specific text from educational paper images, streamlining content digitization workflows.</p>
+                    <div class="project-tags">
+                        <span class="tag">OCR</span>
+                        <span class="tag">Python</span>
+                        <span class="tag">REST API</span>
+                        <span class="tag">Computer Vision</span>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <h3>AI Teacher Assistant Bot</h3>
+                    <p>Built an intelligent Telegram chatbot that analyzes images submitted by teachers and provides automated feedback, improving teacher productivity and assessment efficiency.</p>
+                    <div class="project-tags">
+                        <span class="tag">LLM</span>
+                        <span class="tag">Telegram Bot</span>
+                        <span class="tag">AI</span>
+                        <span class="tag">Image Analysis</span>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <h3>Sales AI Automation Bot</h3>
+                    <p>Developed an AI-driven sales bot to engage with signups, deliver personalized offers, and guide prospects through the purchase funnel, enhancing conversion rates and sales team efficiency.</p>
+                    <div class="project-tags">
+                        <span class="tag">AI Agents</span>
+                        <span class="tag">LLM</span>
+                        <span class="tag">Automation</span>
+                        <span class="tag">Sales</span>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <h3>Telegram Visibility Analytics</h3>
+                    <p>Developed a solution using Large Language Models to analyze Telegram conversations, generating insights to improve user engagement and visibility metrics.</p>
+                    <div class="project-tags">
+                        <span class="tag">LLM</span>
+                        <span class="tag">NLP</span>
+                        <span class="tag">Analytics</span>
+                        <span class="tag">AWS</span>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <h3>LLM Model Hosting Infrastructure</h3>
+                    <p>Built and deployed LLM models on AWS EC2 instances, preparing them for operational use within business workflows and internal automation pipelines.</p>
+                    <div class="project-tags">
+                        <span class="tag">AWS EC2</span>
+                        <span class="tag">LLM</span>
+                        <span class="tag">MLOps</span>
+                        <span class="tag">Infrastructure</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section class="experience">
+        <div class="container">
+            <h2>Professional Experience</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <h3>Data & AI Engineer</h3>
+                    <div class="company">Abwaab Company, Amman - Jordan</div>
+                    <div class="date">April 2022 - Present</div>
+                    <ul>
+                        <li>Developed and deployed data pipelines using AWS services (Kinesis, S3, Athena) to process real-time, terabyte-scale data</li>
+                        <li>Designed and deployed LLM-based solutions for business operations, including conversational data analysis and AI-powered insights</li>
+                        <li>Led migration of data warehouse from AWS to Google BigQuery, optimizing data processing and analytics capabilities</li>
+                        <li>Implemented and optimized hosting of LLM models on AWS EC2, integrating them into internal workflows</li>
+                        <li>Developed analytics tools for actionable insights on customer acquisition, operational efficiency, and business performance</li>
+                    </ul>
+                </div>
+
+                <div class="timeline-item">
+                    <h3>Data Engineer</h3>
+                    <div class="company">Umniah Company, Amman - Jordan</div>
+                    <div class="date">June 2021 - April 2022</div>
+                    <ul>
+                        <li>Led system migration project from MS parallel DWH to Apache Spark Data Lake</li>
+                        <li>Achieved 35-hour monthly time-saving by automating ETL processes for extensive data sets</li>
+                        <li>Developed and streamlined ETL procedures using SSIS and Microsoft Power BI</li>
+                        <li>Specialized in Telecom industry data engineering, including convergent billing system implementation</li>
+                    </ul>
+                </div>
+
+                <div class="timeline-item">
+                    <h3>Oracle Developer</h3>
+                    <div class="company">Tuned Applications, Amman - Jordan</div>
+                    <div class="date">July 2020 - June 2021</div>
+                    <ul>
+                        <li>Developed complex SQL and PL/SQL queries for business analytics</li>
+                        <li>Created forms and reports using Oracle Forms Builder and Reports Builder</li>
+                        <li>Developed analytical tools for insights related to customer acquisition and business performance</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact">
+        <div class="container">
+            <h2>Let's Connect</h2>
+            <p>I'm always interested in discussing new opportunities, innovative projects, or potential collaborations.</p>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <strong>Email:</strong><br>
+                    <a href="mailto:mohammedalsaleh033@gmail.com">mohammedalsaleh033@gmail.com</a>
+                </div>
+                <div class="contact-item">
+                    <strong>Phone:</strong><br>
+                    <a href="tel:+962786454843">+962 78 645 4843</a>
+                </div>
+                <div class="contact-item">
+                    <strong>Location:</strong><br>
+                    Amman, Jordan
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Mohammed Alsaleh. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
